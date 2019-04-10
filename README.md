@@ -1,0 +1,37 @@
+
+# Welch's T-Test
+
+## Introduction 
+
+Thus far, you've seen the traditional student's T-test for hypothesis testing between two sample means. Recall that z-tests are also appropriate for statistics, such as the mean, which can be assumed to be normally distributed. However, when sample sizes are low (n_observations<30), the t-test is more appropriate, as it has heavier tails. Even with this modification, remember that there are still several assumptions to the model. Most notably, traditional t-tests assume that sample sizes and sample variances between the two groups are equal. When these assumptions are not met, Welch's T-test is generally a more reliable test.
+
+## Objectives
+You will be able to:
+* Use Welch's t-test for distributions that do not have a normality assumption.
+
+## $t$-test Review
+
+Recall that $t$-tests are a useful method for determing whether the mean of two small samples indicate different underlying population parameters. The reasoning behind this begins with the use of Z-tests to calculate the likelihood of sampling a particular value from a normal distribution. Furthermore, by the central limit theorem, the mean of a sample is a normally distributed variable centered around the actual underlying population mean. That said, $t$-tests are more appropriate for small samples (n_observations < 30), due to disproportionate tails. Finally, recall that the t-distribution actually converges to a normal distribution as the degrees of freedom continues to increase.  
+
+<img src="images/t_vs_norm_dist.png">
+
+> A normal distribrution vs. T-distributions with varying degrees of freedom. Note how the t-distributuion approaches the normal distribution as the degrees of freedom increases. Recall that when performing a t-test the degrees of freedom equals the number of observations minus one.
+
+## Welch's t-Test
+
+Just as student's $t$-test is a useful adaptation of the normal distribution which can lead to better likelihood estimates under certain conditions, the Welch's $t$-test is a further adaptation that account for additional pertubations in the underlying assumptions of the model. Specifically, the student's $t$-test assumes that the samples are of equal size and equal variance. When these assumptions are not met, then Welch's $t$-test provides a more accurate p-value.
+
+Here is how you calculate it:
+![](http://www.statisticshowto.com/wp-content/uploads/2015/03/Welchs-test-for-unequal-variances.png)
+
+where  
+
+* $\bar{X_i}$ - mean of sample i
+* $s_i$ - variance of sample i
+* $N_i$ - sample size of sample i  
+
+The modification is related to the **degrees of freedom** in the $t$-test, which tends to increase the test power for samples with unequal variance. When two groups have equal sample sizes and variances, Welch’s tends to give the same result as Student’s t. However, when sample sizes and variances are unequal, Student’s t-test is quite unreliable, whereas Welch’s tends perform better.
+
+## Summary
+
+This lesson briefly introduced you to another statistical test for comparing the means of two samples: Welch's $t$-test. Remember that when your samples are not of equal size or do not have equal variances, it is a more appropriate statistical test then the student's $t$-test.
