@@ -32,6 +32,32 @@ where
 
 The modification is related to the **degrees of freedom** in the $t$-test, which tends to increase the test power for samples with unequal variance. When two groups have equal sample sizes and variances, Welch’s tends to give the same result as Student’s t. However, when sample sizes and variances are unequal, Student’s t-test is quite unreliable, whereas Welch’s tends perform better.
 
+## Calculating the Degrees of Freedom
+
+Once the t-score has been calculated for the experiment using the above formula, you then must calculate the degrees of freedom for the t-distribution. Under the student's t-test, this is simply the sample size minus one, but given that the sample sizes may vary using the Welch's t-test, the calculation is a bit more complex:  
+
+<img src='images/Welch-degree of freedom.JPG'>  
+
+
+## Calculating p-Values  
+
+Finally, as with the student's t-test (or a z-test for that matter), you convert the calculated score into a p-value in order to confirm or reject the null-hypothesis of your statistical experiment. For example, you might be using a one-sided t-test to determine whether a new drug had a positive effect on patient outcomes. The p-value for the experiment is equivalent to the area under the t-distribution with the degrees of freedom, as calculated above, and the corresponding t-score.
+
+<img src="images/AUC.png">
+
+The easiest method for determining said p-values is to use Statsmodels cdf method to find the complement and subtracting this from 1.
+
+<img src="images/CdfAndPdf.gif">
+
+Here's the relevant code snippet:
+
+```python
+import scipy.stats as stats
+
+
+p = 1 - stats.t.cdf(t, df)
+```
+
 ## Summary
 
-This lesson briefly introduced you to another statistical test for comparing the means of two samples: Welch's $t$-test. Remember that when your samples are not of equal size or do not have equal variances, it is a more appropriate statistical test then the student's $t$-test.
+This lesson briefly introduced you to another statistical test for comparing the means of two samples: Welch's $t$-test. Remember that when your samples are not of equal size or do not have equal variances, it is a more appropriate statistical test then the student's $t$-test!
