@@ -35,8 +35,7 @@ The modification is related to the **degrees of freedom** in the $t$-test, which
 
 Once the t-score has been calculated for the experiment using the above formula, you then must calculate the degrees of freedom for the t-distribution. Under the student's t-test, this is simply the sample size minus one, but given that the sample sizes may vary using the Welch's t-test, the calculation is a bit more complex:  
 
-<img src='images/Welch-degree of freedom.JPG'>  
-
+# $ v \approx \frac{\left( \frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}\right)^2}{\frac{s_1^4}{N_1^2v_1} + \frac{s_2^4}{N_2^2v_2}} $
 
 ## Calculating p-Values  
 
