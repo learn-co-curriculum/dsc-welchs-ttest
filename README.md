@@ -21,8 +21,10 @@ Recall that $t$-tests are a useful method for determing whether the mean of two 
 
 Just as student's $t$-test is a useful adaptation of the normal distribution which can lead to better likelihood estimates under certain conditions, the Welch's $t$-test is a further adaptation that account for additional pertubations in the underlying assumptions of the model. Specifically, the student's $t$-test assumes that the samples are of equal size and equal variance. When these assumptions are not met, then Welch's $t$-test provides a more accurate p-value.
 
-Here is how you calculate it:
-# $ t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{se_1^2+se_2^2}}$
+Here is how you calculate it: 
+
+
+ $ \Large t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{se_1^2+se_2^2}}$
 where  
 
 * $\bar{X_i}$ - mean of sample i
@@ -35,7 +37,7 @@ The modification is related to the **degrees of freedom** in the $t$-test, which
 
 Once the t-score has been calculated for the experiment using the above formula, you then must calculate the degrees of freedom for the t-distribution. Under the student's t-test, this is simply the sample size minus one, but given that the sample sizes may vary using the Welch's t-test, the calculation is a bit more complex:  
 
-# $ v \approx \frac{\left( \frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}\right)^2}{\frac{s_1^4}{N_1^2v_1} + \frac{s_2^4}{N_2^2v_2}} $
+$ \Large v \approx \frac{\left( \frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}\right)^2}{\frac{s_1^4}{N_1^2v_1} + \frac{s_2^4}{N_2^2v_2}} $
 
 ## Calculating p-Values  
 
