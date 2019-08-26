@@ -28,7 +28,7 @@ Here is how you calculate it:
 where  
 
 * $\bar{X_i}$ - mean of sample i
-* $s_i$ - variance of sample i
+* $s_i^2$ - variance of sample i
 * $N_i$ - sample size of sample i  
 
 The modification is related to the **degrees of freedom** in the $t$-test, which tends to increase the test power for samples with unequal variance. When two groups have equal sample sizes and variances, Welch’s tends to give the same result as Student’s t. However, when sample sizes and variances are unequal, Student’s t-test is quite unreliable, whereas Welch’s tends perform better.
