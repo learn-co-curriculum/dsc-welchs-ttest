@@ -11,15 +11,15 @@ You will be able to:
 
 ## $t$-test Review
 
-Recall that $t$-tests are a useful method for determing whether the mean of two small samples indicate different underlying population parameters. The reasoning behind this begins with the use of Z-tests to calculate the likelihood of sampling a particular value from a normal distribution. Furthermore, by the central limit theorem, the mean of a sample is a normally distributed variable centered around the actual underlying population mean. That said, $t$-tests are more appropriate for small samples (n_observations < 30), due to disproportionate tails. Finally, recall that the t-distribution actually converges to a normal distribution as the degrees of freedom continues to increase.  
+Recall that $t$-tests are a useful method for determining whether the mean of two small samples indicate different underlying population parameters. The reasoning behind this begins with the use of Z-tests to calculate the likelihood of sampling a particular value from a normal distribution. Furthermore, by the central limit theorem, the mean of a sample is a normally distributed variable centered around the actual underlying population mean. That said, $t$-tests are more appropriate for small samples (n_observations < 30), due to disproportionate tails. Finally, recall that the t-distribution actually converges to a normal distribution as the degrees of freedom continues to increase.  
 
 <img src="images/new_t_vs_norm_dist.png">
 
-> A normal distribrution vs. T-distributions with varying degrees of freedom. Note how the t-distributuion approaches the normal distribution as the degrees of freedom increases. Recall that when performing a t-test the degrees of freedom equals the number of observations minus one.
+> A normal distribution vs. T-distributions with varying degrees of freedom. Note how the t-distribution approaches the normal distribution as the degrees of freedom increase. Recall that when performing a t-test the degrees of freedom equals the number of observations minus one.
 
 ## Welch's t-Test
 
-Just as student's $t$-test is a useful adaptation of the normal distribution which can lead to better likelihood estimates under certain conditions, the Welch's $t$-test is a further adaptation that account for additional pertubations in the underlying assumptions of the model. Specifically, the student's $t$-test assumes that the samples are of equal size and equal variance. When these assumptions are not met, then Welch's $t$-test provides a more accurate p-value.
+Just as student's $t$-test is a useful adaptation of the normal distribution which can lead to better likelihood estimates under certain conditions, the Welch's $t$-test is a further adaptation that accounts for additional perturbations in the underlying assumptions of the model. Specifically, the student's $t$-test assumes that the samples are of equal size and equal variance. When these assumptions are not met, then Welch's $t$-test provides a more accurate p-value.
 
 Here is how you calculate it: 
 
