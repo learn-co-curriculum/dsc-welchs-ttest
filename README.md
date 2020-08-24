@@ -6,6 +6,7 @@
 Thus far, you've seen the traditional Student's t-test for hypothesis testing between two sample means. Recall that z-tests are also appropriate for statistics, such as the mean, which can be assumed to be normally distributed. However, when sample sizes are low (n_observations < 30), the t-test is more appropriate, as the t-distribution has heavier tails. Even with this modification, remember that there are still several assumptions to the model. Most notably, traditional t-tests assume that sample sizes and sample variances between the two groups are equal. When these assumptions are not met, Welch's t-test is generally a more reliable test.
 
 ## Objectives
+
 You will be able to: 
 
 - List the conditions needed to require a Welch's t-test 
@@ -26,9 +27,9 @@ Just as Student's t-test is a useful adaptation of the normal distribution which
 
 Here is how you calculate it: 
 
+<img src="https://render.githubusercontent.com/render/math?math=\Large t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{s_1^2}{N_1} %2b \frac{s_2^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{se_1^2%2bse_2^2}}"> 
 
-  <img src="https://render.githubusercontent.com/render/math?math=\Large t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{s_1^2}{N_1} %2b \frac{s_2^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{se_1^2%2bse_2^2}}"> 
-where  
+where
 
 *  <img src="https://render.githubusercontent.com/render/math?math=\bar{X_i}"> - mean of sample i
 *  <img src="https://render.githubusercontent.com/render/math?math=s_i^2"> - variance of sample i
@@ -56,7 +57,6 @@ Here's the relevant code snippet:
 
 ```python
 import scipy.stats as stats
-
 
 p = 1 - stats.t.cdf(t, df)
 ```
