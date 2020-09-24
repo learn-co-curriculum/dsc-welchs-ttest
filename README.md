@@ -27,12 +27,12 @@ Just as Student's t-test is a useful adaptation of the normal distribution which
 
 Here is how you calculate it: 
 
-<img src="https://render.githubusercontent.com/render/math?math=\Large t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{s_1^2}{N_1} %2b \frac{s_2^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{se_1^2%2bse_2^2}}"> 
+<img src="https://render.githubusercontent.com/render/math?math=\Large t = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{{s_1}^2}{N_1} %2b \frac{{s_2}^2}{N_2}}} = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{{se_1}^2%2b{se_2}^2}}"> 
 
 where
 
 *  <img src="https://render.githubusercontent.com/render/math?math=\bar{X_i}"> - mean of sample i
-*  <img src="https://render.githubusercontent.com/render/math?math=s_i^2"> - variance of sample i
+*  <img src="https://render.githubusercontent.com/render/math?math={s_i}^2"> - variance of sample i
 *  <img src="https://render.githubusercontent.com/render/math?math=N_i"> - sample size of sample i  
 
 The modification is related to the **degrees of freedom** in the t-test, which tends to increase the test power for samples with unequal variance. When two groups have equal sample sizes and variances, Welch’s t-test tends to give the same result as the Student’s t-test. However, when sample sizes and variances are unequal, Student’s t-test is quite unreliable, whereas Welch’s tends perform better.
@@ -41,7 +41,7 @@ The modification is related to the **degrees of freedom** in the t-test, which t
 
 Once the t-score has been calculated for the experiment using the above formula, you then must calculate the degrees of freedom for the t-distribution. Under the two-sample Student's t-test, this is simply the total number of observations in the samples size minus two, but given that the sample sizes may vary using the Welch's t-test, the calculation is a bit more complex:  
 
- <img src="https://render.githubusercontent.com/render/math?math=\Large v \approx \frac{\left( \frac{s_1^2}{N_1} %2b \frac{s_2^2}{N_2}\right)^2}{\frac{s_1^4}{N_1^2v_1} %2b \frac{s_2^4}{N_2^2v_2}} "> 
+ <img src="https://render.githubusercontent.com/render/math?math=\Large v \approx \frac{\left( \frac{{s_1}^2}{N_1} %2b \frac{{s_2}^2}{N_2}\right)^2}{\frac{{s_1}^4}{{{N_1}^2}v_1} %2b \frac{{s_2}^4}{{{N_2}^2}v_2}} "> 
 
 ## Calculate p-values  
 
