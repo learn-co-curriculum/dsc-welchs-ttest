@@ -1,4 +1,3 @@
-
 # Welch's T-Test
 
 ## Introduction 
@@ -16,7 +15,7 @@ You will be able to:
 
 Recall that t-tests are a useful method for determining whether the mean of two small samples indicate different underlying population parameters. The reasoning behind this begins with the use of z-tests to calculate the likelihood of sampling a particular value from a normal distribution. Furthermore, by the central limit theorem, the mean of a sample is a normally distributed variable centered around the actual underlying population mean. That said, t-tests are more appropriate for small samples (n_observations < 30), due to disproportionate tails. Finally, recall that the t-distribution actually converges to a normal distribution as the degrees of freedom continues to increase.  
 
-<img src="images/new_t_vs_norm_dist.png">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/new_t_vs_norm_dist.png">
 
 > A normal distribution vs. t-distributions with varying degrees of freedom. Note how the t-distribution approaches the normal distribution as the degrees of freedom increases. Recall that when performing a two-sample t-test, assuming that sample variances are equal, the degrees of freedom equals the total number of observations in the samples minus two.
 
@@ -46,11 +45,11 @@ $ \Large v \approx \frac{\left( \frac{{s_1}^2}{N_1} + \frac{{s_2}^2}{N_2}\right)
 
 Finally, as with the Student's t-test (or a z-test for that matter), you convert the calculated score into a p-value in order to confirm or reject the null-hypothesis of your statistical experiment. For example, you might be using a one-sided t-test to determine whether a new drug had a positive effect on patient outcomes. The p-value for the experiment is equivalent to the area under the t-distribution with the degrees of freedom, as calculated above, and the corresponding t-score.
 
-<img src="images/new_AUC.png" width="500">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/new_AUC.png" width="500">
 
 The easiest method for determining said p-values is to use the `.cdf()` method from `scipy.stats` to find the complement and subtracting this from 1.
 
-<img src="images/new_CdfAndPdf.png" width="500">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/new_CdfAndPdf.png" width="500">
 
 Here's the relevant code snippet:
 
